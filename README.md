@@ -7,4 +7,10 @@
 1. first use git init
 2. use this to avoid publishing the node modules to remote repo ´echo "node_modules/" >> .gitignore´
 
- 
+#conversion from ts to js
+  run "tsc" it'll change the ts file to js file.
+
+#steps for running typerscript files
+    run "tsc"
+    node filename.ts
+
