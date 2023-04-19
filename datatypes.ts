@@ -43,13 +43,37 @@ console.log(result1);
 
 //ENUM
 const enum color {red, green, blue};
-
 let c : color = color.green;
  
-let swapNumbs :[firstnumber:number,secondnumber:number];
 
+// Tuple
+let swapNumbs :[firstnumber:number,secondnumber:number];
 function swapNumbers(num1:number,numb2:number):[number,number]{
+    //[number,number] defines the return type of the function
     return [numb2,num1];
 }
-
 swapNumbs = swapNumbers(10,20);
+console.log(swapNumbs[0]);
+console.log(swapNumbs[1]);
+
+
+//ANY
+// allow any type of data to be stored in the variable
+let data : any;
+data = 10;
+data = "John";
+data = true;
+data = [1,2,3,4,5];
+data = {name:"John",age:20};
+console.log(data)
+// or just remove the type declaration then data1 can work similar to any.
+let data1;
+data1 = 10;
+data1 = "John";
+data1 = true;
+data1 = [1,2,3,4,5];
+console.log(data1)
+
+
+
+
