@@ -55,10 +55,10 @@ data = true;
 data = [1, 2, 3, 4, 5];
 data = { name: "John", age: 20 };
 console.log(data);
+// or just remove the type declaration then data1 can work similar to any.
 let data1;
 data1 = 10;
 data1 = "John";
 data1 = true;
 data1 = [1, 2, 3, 4, 5];
 console.log(data1);
-//
