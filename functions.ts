@@ -19,3 +19,13 @@ function add1(num1: number, num2: number,num3?:number):number {
     // number 3 exist then return num1 + num2 + num3 else return num1 + num2
 }
 console.log(add(1,2));
+
+//  REST PARAMETERS FUNCTION
+function add2(num1: number, num2: number, ...num3:number[]):number {
+    return num1 + num2 + num3.reduce((a,b)=>a+b);
+}
+let numbers = [1,2,3,4,5,6];
+console.log(add2(2,3,...numbers));
+or 
+console.log(add2(2,3,...[5,6,7]));
+
