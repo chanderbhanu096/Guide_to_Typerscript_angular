@@ -1,6 +1,7 @@
 class Employee {
     //properties
     // private or # make the variable private
+    #id!: number;
     name!: string;
     age!: number;
     salary!: number;
@@ -8,7 +9,8 @@ class Employee {
     // protected are accessible in child class or within the same class
 
     //constructor
-    constructor(name: string, age: number, salary: number, address: string) {
+    constructor(id:number,name: string, age: number, salary: number, address: string) {
+        this.#id = id;
         this.name = name;
         this.age = age;
         this.salary = salary;
@@ -26,15 +28,24 @@ class Employee {
 
 
 // Instance of class or object
-let john = new Employee('ankush', 25, 10000, "Bangalore");
-let address = john.getNameWithAddress();
+let john = new Employee(1,'ankush', 25, 10000, "Bangalore");
+//john.#id = 2; will give error as id is private
+
 
 class manager extends Employee {
-    constructor(name: string, age: number, salary: number, address: string) {
+    constructor(id:number,name: string, age: number, salary: number, address: string) {
         //super keyword is used to call the constructor of the parent class
-        super(name, age, salary, address);
+        super(id,name, age, salary, address);
+    }
+    getNameWithAddress(): string {
+        // return this.name + " " + this.address;
+        return `${this.name} is a manager at ${this.address}`;
+        console.log(john.getNameWithAddress())
     }
 }
+
+let mike = new manager(2,'mike', 25, 10000, "Bangalore");
+console.log(mike.getNameWithAddress());
 
 
 // john.name = "John";
@@ -43,6 +54,5 @@ class manager extends Employee {
 // john.address = "Bangalore";
 
 console.log(john);
-console.log(address);
+// console.log(address); error as address is protected
 
-class 
