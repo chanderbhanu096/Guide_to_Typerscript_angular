@@ -89,6 +89,7 @@
     type ID = number | string; //a type alias can name a union type
 
 // INTERFACES
+    // Adding new fields to an existing interface is called extending the interface While A type alias cannot be extended or implemented from (nor can it extend/implement other types).
     //An interface declaration is another way to name an object type:
 
     interface Point1 {
@@ -101,6 +102,14 @@
     }
     printCoord1({ x: 100, y: 100 });
 
+// Type Assertions
+    // A type assertion is like a type cast in other languages, but it performs no special checking or restructuring of data. It has no runtime impact and is used purely by the compiler. TypeScript assumes that you, the programmer, have performed any special checks that you need.
+    // if you’re using document.getElementById, TypeScript only knows that this will return some kind of HTMLElement, but you might know that your page will always have an HTMLCanvasElement with a given ID.
+    const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+    //or 
+    const myCanvas1 = <HTMLCanvasElement>document.getElementById("main_canvas");
+    // TypeScript only allows type assertions which convert to a more specific or less specific version of a type. This rule prevents “impossible” coercions like:
+    const x = "hello" as number; // Error: 'string' is not assignable to 'number'.
 
     
 
