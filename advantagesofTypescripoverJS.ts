@@ -18,7 +18,7 @@
    // greetings(123); //TypeScript Error: Argument of type '123' is number but expected string TypeScript
 
 // Return type annotation
-    function add(): string {     // add(): string IS THE RETURN TYPE NOTATION
+    function add01(): string {     // add(): string IS THE RETURN TYPE NOTATION
         return "Hello";
     }
     
@@ -48,11 +48,11 @@
       // OK
       print_Id("202"); // string passes as the id
       // Error
-      print_Id({ myID: 22342 }); // object fails as the id BECAUSE IT IS NOT A NUMBER OR STRING
+    //   print_Id({ myID: 22342 }); // object fails as the id BECAUSE IT IS NOT A NUMBER OR STRING
 
     // UNION TYPE WITH INTERFACE
-    function printId(id: number | string) {
-    console.log(id.toUpperCase());
+    function print0Id(id: number | string) {
+    // console.log(id.toUpperCase());
     }    
     //TypeScript will only allow an operation if it is valid for every member of the union. For example, if you have the union string | number, you can’t use methods that are only available on string:
     function printId(id: number | string) {
@@ -109,7 +109,7 @@
     //or 
     const myCanvas1 = <HTMLCanvasElement>document.getElementById("main_canvas");
     // TypeScript only allows type assertions which convert to a more specific or less specific version of a type. This rule prevents “impossible” coercions like:
-    const x = "hello" as number; // Error: 'string' is not assignable to 'number'.
+    // const x = "hello" as number; // Error: 'string' is not assignable to 'number'.
 
     
 

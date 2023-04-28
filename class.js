@@ -1,4 +1,9 @@
 "use strict";
+var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
 var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -8,6 +13,20 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 var _Employee_id;
 class Employee {
     // protected are accessible in child class or within the same class
+    //GETTER AND SETTER
+    //getters and setters are used to get and set the private properties
+    //getters and setters are used to access the private properties
+    get empId() {
+        return __classPrivateFieldGet(this, _Employee_id, "f");
+    }
+    set empId(id) {
+        __classPrivateFieldSet(this, _Employee_id, id, "f");
+    }
+    //static property
+    //static METHOD can be accessed without creating an instance of the class className.propertyName
+    static getEmployeeCount() {
+        return 100;
+    }
     //constructor
     constructor(id, name, age, salary, address) {
         //properties
@@ -28,7 +47,13 @@ class Employee {
 _Employee_id = new WeakMap();
 // Instance of class or object
 let john = new Employee(1, 'ankush', 25, 10000, "Bangalore");
+// using getter and setter on john instance private property
+// SETTER
+john.empId = 2;
+// GETTER
+console.log("employeed new id " + john.empId);
 //john.#id = 2; will give error as id is private
+Employee.getEmployeeCount();
 class manager extends Employee {
     constructor(id, name, age, salary, address) {
         //super keyword is used to call the constructor of the parent class
