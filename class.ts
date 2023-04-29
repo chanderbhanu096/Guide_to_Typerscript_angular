@@ -1,3 +1,9 @@
+interface Address{
+        street: string;
+        city: string;
+        state: string;
+        pincode: number;
+    }
 class Employee {
     //properties
     // private or # make the variable private
@@ -5,8 +11,18 @@ class Employee {
     protected name!: string;
     age!: number;
     salary!: number;
-    protected address!: string;
+    // protected address!: string;
     // protected are accessible in child class or within the same class
+    address : Address;
+    // address:{
+    //     street: string;
+    //     city: string;
+    //     state: string;
+    //     pincode: number;
+    // }
+
+    // WHAT WE CAN DO IF WANT TO USE THE ABOVE ADDRESS OBJECT AGAIN AND AGAIN WE CAN CREATE AN INTERFACE
+
 
     //GETTER AND SETTER
     //getters and setters are used to get and set the private properties
@@ -26,7 +42,7 @@ class Employee {
     }
 
     //constructor
-    constructor(id:number,name: string, age: number, salary: number, address: string) {
+    constructor(id:number,name: string, age: number, salary: number, address: Address) {
         this.#id = id;
         this.name = name;
         this.age = age;
@@ -45,7 +61,9 @@ class Employee {
 
 
 // Instance of class or object
-let john = new Employee(1,'ankush', 25, 10000, "Bangalore");
+let john = new Employee(1,'ankush', 25, 10000, 
+                        {street: "abc", city: "Bangalore", 
+                        state: "Karnataka", pincode: 560037});
 // using getter and setter on john instance private property
 // SETTER
 john.empId = 2;
@@ -57,7 +75,7 @@ Employee.getEmployeeCount();
 
 
 class manager extends Employee {
-    constructor(id:number,name: string, age: number, salary: number, address: string) {
+    constructor(id:number,name: string, age: number, salary: number, address: Address) {
         //super keyword is used to call the constructor of the parent class
         super(id,name, age, salary, address);
     }
@@ -68,7 +86,7 @@ class manager extends Employee {
     }
 }
 
-let mike = new manager(2,'mike', 25, 10000, "Bangalore");
+let mike = new manager(2,'mike', 25, 10000, {street: "abc", city: "Bangalore", state: "Karnataka", pincode: 560037});
 console.log(mike.getNameWithAddress());
 
 
