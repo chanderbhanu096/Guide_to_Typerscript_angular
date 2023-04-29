@@ -16,3 +16,12 @@ let user_1: User = {name: "John", age: 25, id: 1, email: ""}
 // OR Both are right because age is optional
 let user2: User = {name: "ABC", id: 1, email: ""}
 
+interface Employees extends User{
+    salary: number;
+} 
+
+let employee:Employees = {name: "John", age: 25, id: 1, email: "", salary: 10000} 
+
+interface login{
+    login(): User
+}
