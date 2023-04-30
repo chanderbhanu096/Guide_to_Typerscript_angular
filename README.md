@@ -14,3 +14,6 @@
     run "tsc"
     node filename.ts
 
+# for storing all the emitted js files from using "tsc" enable this from the tsconfig.json
+      "outDir": "./",                                   /* Specify an output folder for all emitted files. */
+

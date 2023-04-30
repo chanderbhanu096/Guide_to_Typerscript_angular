@@ -12,6 +12,7 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 };
 var _Employee_id;
 Object.defineProperty(exports, "__esModule", { value: true });
+//class Employee implements Userlogin.Login{
 class Employee {
     // address:{
     //     street: string;
@@ -45,6 +46,7 @@ class Employee {
         this.salary = salary;
         this.address = address;
     }
+    //  Login(): Userlogin.User {
     Login() {
         return { name: "John", age: 25, id: 1, email: "" };
     }
