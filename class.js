@@ -12,7 +12,13 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 };
 var _Employee_id;
 class Employee {
-    // protected are accessible in child class or within the same class
+    // address:{
+    //     street: string;
+    //     city: string;
+    //     state: string;
+    //     pincode: number;
+    // }
+    // WHAT WE CAN DO IF WANT TO USE THE ABOVE ADDRESS OBJECT AGAIN AND AGAIN WE CAN CREATE AN INTERFACE
     //GETTER AND SETTER
     //getters and setters are used to get and set the private properties
     //getters and setters are used to access the private properties
@@ -46,7 +52,8 @@ class Employee {
 }
 _Employee_id = new WeakMap();
 // Instance of class or object
-let john = new Employee(1, 'ankush', 25, 10000, "Bangalore");
+let john = new Employee(1, 'ankush', 25, 10000, { street: "abc", city: "Bangalore",
+    state: "Karnataka", pincode: 560037 });
 // using getter and setter on john instance private property
 // SETTER
 john.empId = 2;
@@ -65,7 +72,7 @@ class manager extends Employee {
         console.log(john.getNameWithAddress());
     }
 }
-let mike = new manager(2, 'mike', 25, 10000, "Bangalore");
+let mike = new manager(2, 'mike', 25, 10000, { street: "abc", city: "Bangalore", state: "Karnataka", pincode: 560037 });
 console.log(mike.getNameWithAddress());
 // john.name = "John";
 // john.age = 30;
