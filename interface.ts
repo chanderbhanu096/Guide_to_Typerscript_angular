@@ -2,7 +2,7 @@
 // Interface can extend multiple interfaces
 // Interface can extend a class but only the members(public and private) will be inherited not the implementation
 // Interface cannot implement another interface or class
-interface User{
+export interface User{
     // A type alias cannot be extended or implemented from (nor can it extend/implement other types).
     // Basically interfaces are used to create as a module which can be used by other classes using implement so the same type doesn't have to be written again and again
     name: string;
@@ -22,6 +22,6 @@ interface Employees extends User{
 
 let employee:Employees = {name: "John", age: 25, id: 1, email: "", salary: 10000} 
 
-interface login{
-    login(): User
+export interface Login{   // Interface can be exported in another file
+    Login(): User; // Method declaration not definition (no body) it will return User type
 }

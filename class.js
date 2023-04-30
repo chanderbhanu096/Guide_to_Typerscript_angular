@@ -11,6 +11,7 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
 var _Employee_id;
+Object.defineProperty(exports, "__esModule", { value: true });
 class Employee {
     // address:{
     //     street: string;
@@ -43,6 +44,9 @@ class Employee {
         this.age = age;
         this.salary = salary;
         this.address = address;
+    }
+    Login() {
+        return { name: "John", age: 25, id: 1, email: "" };
     }
     //method
     getNameWithAddress() {

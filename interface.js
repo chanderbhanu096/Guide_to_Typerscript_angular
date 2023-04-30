@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // this
 let user_1 = { name: "John", age: 25, id: 1, email: "" };
 // OR Both are right because age is optional

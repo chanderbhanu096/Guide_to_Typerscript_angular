@@ -1,10 +1,16 @@
+import { Login,User } from "./interface";
+// other way to import is
+//    import * as Userlogin from "./interface"; 
+   // method or member will be accessed with . operator, e/g UserLogin.Login()
+
 interface Address{
         street: string;
         city: string;
         state: string;
         pincode: number;
     }
-class Employee {
+    //class Employee implements Userlogin.Login{
+class Employee implements Login{
     //properties
     // private or # make the variable private
     #id!: number;
@@ -48,6 +54,10 @@ class Employee {
         this.age = age;
         this.salary = salary;
         this.address = address;
+    }
+    //  Login(): Userlogin.User {
+    Login(): User {
+        return {name: "John", age: 25, id: 1, email: ""};
     }
 
     //method
